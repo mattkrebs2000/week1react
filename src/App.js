@@ -22,6 +22,7 @@ class App extends Component {
 
   // Toggle Complete
   markComplete = id => {
+    // console.log("testing1", id);
     this.setState({
       todos: this.state.todos.map(todo => {
         if (todo.id === id) {
@@ -34,6 +35,7 @@ class App extends Component {
 
   // Delete Todo
   delTodo = id => {
+    // console.log("testing2",id);
     axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`).then(res =>
       this.setState({
         todos: [...this.state.todos.filter(todo => todo.id !== id)]
@@ -43,6 +45,7 @@ class App extends Component {
 
   // Add Todo
   addTodo = title => {
+    // console.log("testing3", title);
     axios
       .post('https://jsonplaceholder.typicode.com/todos', {
         title,
@@ -61,9 +64,9 @@ class App extends Component {
           <div className="container">
             <Header />
             <Route
-              exact
+            exact
               path="/"
-              render={props => (
+              render={(props) => (
                 <React.Fragment>
                   <AddTodo addTodo={this.addTodo} />
                   <Todos
@@ -75,6 +78,7 @@ class App extends Component {
               )}
             />
             <Route path="/about" component={About} />
+         
           </div>
         </div>
       </Router>
@@ -83,3 +87,9 @@ class App extends Component {
 }
 
 export default App;
+
+
+  // <Route exact path="/" component={About} />;
+
+  //  <Route
+  //             path="/Home"

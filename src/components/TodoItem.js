@@ -2,38 +2,41 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 export class TodoItem extends Component {
-  getStyle = () => {
-    return {
-      background: "#f4f4f4",
-      padding: "10px",
-      borderBottom: "1px #ccc dotted",
-      textDecoration: this.props.todo.completed ? "line-through" : "none",
-    };
-  };
+         getStyle = () => {
+           return {
+             background: "#f4f4f4",
+             padding: "10px",
+             borderBottom: "1px #ccc dotted",
+             textDecoration: this.props.todo.completed
+               ? "line-through"
+               : "none",
+           };
+         };
 
-  componentDidMount = (props) => {
-    console.log(this.props.todo);
-  };
+         componentDidMount = (props) => {
+           console.log(this.props.todo);
+         };
 
-  render() {
-    const { id, title, completed } = this.props.todo;
-    return (
-      <div style={this.getStyle()}>
-        <p>
-          <input
-            type="checkbox"
-            defaultChecked={completed}
-            onChange={this.props.markComplete.bind(this, id)}
-          />{" "}
-          {title}
-          <button onClick={this.props.delTodo.bind(this, id)} style={btnStyle}>
-            x
-          </button>
-        </p>
-      </div>
-    );
-  }
-}
+         render() {
+           const { id, title, completed } = this.props.todo;
+           return (
+             <div style={this.getStyle()}>
+               <p>
+                 <input
+                   type="checkbox"
+                   defaultChecked={completed}
+                   onChange={this.props.markComplete.bind(this, id)}
+                 />{" "}
+                 {title}
+                 <button onClick={this.props.delTodo.bind(this, id)}
+                 style={btnStyle}>
+                   x
+                 </button>
+               </p>
+             </div>
+           );
+         }
+       }
 
 // PropTypes
 TodoItem.propTypes = {
@@ -52,4 +55,41 @@ const btnStyle = {
   float: "right",
 };
 
+// Part of answer for number 10
+// const btnStyle2 = {
+//   background: "#0000ff",
+//   color: "#fff",
+//   border: "none",
+//   padding: "5px 9px",
+//   borderRadius: "50%",
+//   cursor: "pointer",
+//   float: "right",
+// };
+
 export default TodoItem;
+
+
+  // style={this.props.todo.completed ? btnStyle2 : btnStyle}>
+
+// Before Destructuring --- problem #4.
+    //  render() {
+         
+    //        return (
+    //          <div style={this.getStyle()}>
+    //            <p>
+    //              <input
+    //                type="checkbox"
+    //                defaultChecked={this.props.todo.completed}
+    //                onChange={this.props.markComplete.bind(this, this.props.todo.id)}
+    //              />{" "}
+    //              {this.props.todo.title}
+    //              <button
+    //                onClick={this.props.delTodo.bind(this, this.props.todo.id)}
+    //                style={btnStyle}
+    //              >
+    //                x
+    //              </button>
+    //            </p>
+    //          </div>
+    //        );
+    //      }
