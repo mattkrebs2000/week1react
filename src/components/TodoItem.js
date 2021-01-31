@@ -13,9 +13,7 @@ export class TodoItem extends Component {
            };
          };
 
-         componentDidMount = (props) => {
-           console.log(this.props.todo);
-         };
+        
 
          render() {
            const { id, title, completed } = this.props.todo;
