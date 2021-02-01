@@ -18,8 +18,39 @@ npm start
 npm run build
 
 
+__________________________________________________
 
-Questions on the Code: 
+Corresponding Week 1 Homework: 
+
+WEEK 1: Homework
+
+Directions: Make a copy of this google document
+
+Finish Watching OR Re-Watch Video: https://www.youtube.com/watch?v=sBws8MSXN7A&t=162s
+
+As you are watching the accompanying code open on your editor and make comments in the code that help to clarify or explain things that are happening. 
+
+Then copy and paste those comments with any relevant code onto this document. 
+
+When you are finished share a link to your completed document. 
+
+For example: 
+
+ 
+//these are "child" components that are brought in from somewhere else in the application folder
+
+import Header from './components/layout/Header';
+import Todos from './components/Todos';
+import AddTodo from './components/AddTodo';
+import About from './components/pages/About';
+
+You should have at least 20 comments but maybe more. 
+
+
+_________________________________________________
+
+
+Questions on the Code to review the next week: 
 
 
 1. For this question consider all of the .js files in the SRC folder and the “imports” (the ones that import another component - FOR example: import Todos from './components/Todos';) that exist at the top of each of these pages:
